@@ -1,11 +1,10 @@
 # source /usr/share/cachyos-fish-config/cachyos-config.fish
 
 # overwrite greeting
-# potentially disabling fastfetch
-# function fish_greeting
-   # smth smth
-# end
+function fish_greeting
+end
 
+set -gx EDITOR helix
 
 ## Useful aliases
 
@@ -22,3 +21,5 @@ alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 alias big="expac -H M '%m\t%n' | sort -h | nl"
 # Cleanup orphaned packages
 alias cleanup='sudo pacman -Rns (pacman -Qtdq)'
+
+zoxide init fish | source
